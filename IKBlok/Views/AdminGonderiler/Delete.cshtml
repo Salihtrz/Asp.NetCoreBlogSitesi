@@ -1,0 +1,106 @@
+﻿@model EFLayer.Class.Gonderiler
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@* 
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Gonderiler</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GonderiName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GonderiName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.kategoriId)
+        </dt>
+        <dd class = "col-sm-10">
+           @Html.DisplayFor(model => model.kategoriId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategories)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kategories.kategoryName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="GonderiId" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index">Listeye geri dön</a>
+    </form>
+</div>
+
+ *@
+
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<!-- Default box -->
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">Gönderi Sil</h3>
+
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+								<i class="fas fa-minus"></i>
+							</button>
+							<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+								<i class="fas fa-times"></i>
+							</button>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Silmek istediğinize emin misiniz?</h5>
+						<hr />
+						<hr />
+						<div>
+                            <dl class="row">
+                                <dt class="col-sm-2">
+                                    @Html.DisplayNameFor(model => model.GonderiName)
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.GonderiName)
+                                </dd>
+                                <dt class="col-sm-2">
+                                    @Html.DisplayNameFor(model => model.kategoriId)
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.kategoriId)
+                                </dd>
+                                <dt class="col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Kategories)
+                                </dt>
+                                <dd class="col-sm-10">
+                                    @Html.DisplayFor(model => model.Kategories.kategoryName)
+                                </dd>
+                            </dl>
+
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="GonderiId" />
+                              
+                                <div class="form-group">
+									<input type="submit" value="Sil" class="btn btn-danger" />
+
+                                </div>
+                                <div>
+                                    <a asp-action="Index" class="btn btn-warning">Listeye Geri Dön</a>
+                                </div>
+
+
+                            </form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>

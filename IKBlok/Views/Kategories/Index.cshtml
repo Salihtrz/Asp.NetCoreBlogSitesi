@@ -1,0 +1,22 @@
+﻿@model IEnumerable<EFLayer.Class.Kategories>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/UILayout.cshtml";
+}
+<h1>KATEGORİLER</h1>
+<table class="table">
+
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td style="color:white">
+					@Html.DisplayFor(modelItem => item.kategoryName)
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+	 

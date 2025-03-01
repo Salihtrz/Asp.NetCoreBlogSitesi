@@ -1,0 +1,82 @@
+﻿@model EFLayer.Class.User
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<h1>Hoşgeldiniz</h1>
+<div class="main-w3lsrow">
+    <div class="login-form login-form-left">
+        <div class="agile-row">
+            <h2>Giriş Paneli</h2>
+            <div class="login-agileits-top">
+                <form asp-action="Index" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="UserAdi" class="form-control" placeholder="Kullanıcı Adı" />
+                        <span asp-validation-for="UserAdi" class="text-danger"></span>
+                    </div>
+                    <div class="div2">
+                        <div class="form-group" style="display:flex; align-items:center">
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Şifre" id="passwordField" />
+                            <button class="btn-img bg-transparent" type="button" id="togglePasswordButton" style="background-color:black">
+                                <img src="~/web/şifregizleme1.png" />
+                            </button>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <button class="btn" asp-action="Index" asp-controller="Login">Giriş Yap</button>
+                    </div>
+                </form>
+                <label class="lbl1-text">Bir Hesabınız yok mu?</label>
+                <div>
+                    <a class="btn" asp-action="Create" asp-controller="Register">Kayıt Ol</a>
+                </div>
+            </div>
+            <div class="login-agileits-bottom1">
+                <h3>Veya</h3>
+            </div>
+            <div class="social_icons agileinfo">
+                <ul class="top-links">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.google.com/"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="container">
+                <main role="main" class="pb-3">
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var passwordField = document.getElementById('passwordField');
+        var togglePasswordButton = document.getElementById('togglePasswordButton');
+
+        togglePasswordButton.addEventListener('click', function () {
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        });
+    });
+    @if (ViewBag.EslesmeHatasi != null && (bool)ViewBag.EslesmeHatasi)
+    {
+        <text>
+            Swal.fire({
+                icon: 'error',
+                title: 'Hata',
+                text: 'Kullanıcı Adı veya Şifreniz Hatalı!!',
+            }).then(function () {
+                window.location.href = '@Url.Action("Index", "Login")'
+            });
+        </text>
+    }
+</script>

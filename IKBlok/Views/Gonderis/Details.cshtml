@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EFLayer.Class.Gonderiler>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/UILayout.cshtml";
+}
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <div class="card post-item bg-transparent border-0 mb-5">
+                <img class="card-img-top rounded-300" src="@item.GonderiResim" alt="">
+                <div class="card-body px-0">
+                    <h2 class="card-title">
+                        <a class="text-white opacity-75-onHover">@item.GonderiBaslik</a>
+                    </h2>
+                    <ul class="post-meta mt-3">
+                        <li class="d-inline-block mr-3">
+                            <span class="fas fa-clock text-primary"></span>
+                            <a class="ml-1">@(((DateTime)item.gonderiTarihi).ToString("yyyy-MM-dd HH:mm:ss"))</a>
+                        </li>
+                        <li class="d-inline-block">
+                            <span class="fas fa-list-alt text-primary"></span>
+                            <a class="ml-1">@item.Kategories.kategoryName</a>
+                        </li>
+                    </ul>
+                    <p class="card-text my-4">
+                        @item.GonderiIcerik
+                    </p>
+                </div>
+            </div>
+        </tr>
+    }
+</tbody>

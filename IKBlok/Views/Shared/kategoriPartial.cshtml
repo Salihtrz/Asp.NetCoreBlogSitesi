@@ -1,0 +1,10 @@
+﻿@model List<EFLayer.Class.Kategories>
+
+@if (TempData["kategoriler"] as List<EFLayer.Class.Kategories> != null)
+{
+    @foreach (var item in TempData["kategoriler"] as List<EFLayer.Class.Kategories>)
+    {
+        <a class="d-block " href="/Gonderis/mainPageKategories/@item.kategoriId">@item.kategoryName</a>
+
+    }
+}

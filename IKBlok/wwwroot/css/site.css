@@ -1,0 +1,109 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.lbl-text {
+    color: white;
+    font-size: large;
+    text-align: right;
+    margin-bottom: 10px;
+    width: 100px;
+}
+
+.lbl1-text {
+    color: white;
+    font-size: large;
+}
+
+.txt-text {
+    color: white;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+.txt-text2 {
+    color: white;
+    font-family:'Copperplate Gothic','Papyrus','fantasy';
+    background-color:transparent;
+    height:30px;
+}
+
+.btn-img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.div {
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.div2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin-bottom: 10px;
+    width: 400px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.text-danger {
+    color: red;
+}
+.underline-text {
+    text-decoration: underline;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 500px;
+    min-height: 100vh; /* Sayfanýn yüksekliði kadar uzanacak þekilde ayarlayýn */
+}
+.head {
+    margin-bottom: 10px;
+    width: 400px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    font-family:
+}

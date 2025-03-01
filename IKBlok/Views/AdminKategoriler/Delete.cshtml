@@ -1,0 +1,59 @@
+﻿@model EFLayer.Class.Kategories
+
+@{
+	ViewData["Title"] = "Delete";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<section class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<!-- Default box -->
+				<div class="card">
+					<div class="card-header">
+						<h3 class="card-title">Kategori Sil</h3>
+
+						<div class="card-tools">
+							<button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+								<i class="fas fa-minus"></i>
+							</button>
+							<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+								<i class="fas fa-times"></i>
+							</button>
+						</div>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">Silmek istediğinize emin misiniz?</h5>
+						<hr />
+						<hr />
+						<div>
+							<dl class="row">
+								<dt class="col-sm-2">
+									@Html.DisplayNameFor(model => model.kategoryName)
+								</dt>
+								<dd class="col-sm-10">
+									@Html.DisplayFor(model => model.kategoryName)
+								</dd>
+							</dl>
+
+							<form asp-action="Delete" method="post">
+								<input type="hidden" asp-for="kategoriId" />
+
+								<div class="form-group">
+									<input type="submit" value="Sil" class="btn btn-danger" />
+
+								</div>
+								<div>
+									<a asp-action="Index" class="btn btn-warning">Listeye Geri Dön</a>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>

@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Galaxy - Personal Blog Template</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- theme meta -->
+    <meta name="theme-name" content="galaxy" />
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/UITheme/plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="~/UITheme/plugins/fontawesome/css/all.css">
+
+    <!-- Main Stylesheet -->
+    <link href="~/UITheme/css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="~/UITheme/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="~/UITheme/images/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- START preloader-wrapper -->
+    <div class="preloader-wrapper">
+        <div class="preloader-inner">
+            <div class="spinner-border text-red"></div>
+        </div>
+    </div>
+    <!-- END preloader-wrapper -->
+    <!-- START main-wrapper -->
+    <section class="d-flex">
+
+        <!-- start of sidenav -->
+        <aside>
+            <div class="sidenav position-sticky d-flex flex-column justify-content-between">
+                <a class="navbar-brand" href="/Home/Index" style="background-color:transparent">
+                    <img src="~/UITheme/images/logo-no-background.png" alt="">
+                </a>
+                <!-- end of navbar-brand -->
+
+                <div class="navbar navbar-dark my-4 p-0 font-primary">
+                    <ul class="navbar-nav w-100" style="margin-bottom:50px">
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" style="margin-bottom:10px" asp-action="Index" asp-controller="Home">Ana Sayfa</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" style="margin-bottom:10px" asp-action="Index" asp-controller="Hakkimdas">Hakkımda</a>
+                        <li class="nav-item  accordion">
+                            <a class="nav-link text-white" style="margin-bottom:10px" role="button" data-toggle="collapse" data-target="#drop-menu" aria-expanded="false" aria-controls="drop-menu">Kategoriler</a>
+                            <div id="drop-menu" class="drop-menu collapse">
+
+                           @await Html.PartialAsync("kategoriPartial",TempData["kategoriler"] as IEnumerable<EFLayer.Class.Kategories>)
+  
+
+                            </div>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" style="margin-bottom:10px" asp-action="Index" asp-controller="Gonderis">Gönderiler</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" style="margin-bottom:10px" asp-action="Index" asp-controller="Iletisims">İletişim</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link text-white px-0" style="margin-bottom:10px" asp-action="Index" asp-controller="Login">Giriş Yap</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- end of sidenav -->
+        <div class="main-content">
+            <!-- start of mobile-nav -->
+            <header class="mobile-nav pt-4">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <a href="~/UITheme/index.html">
+                                <img src="~/UITheme/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button class="nav-toggle bg-transparent border text-white">
+                                <span class="fas fa-bars"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav-toggle-overlay"></div>
+            <!-- end of mobile-nav -->
+
+            <div class="container pt-4 mt-5">
+                <div class="row justify-content-between">
+                    <div class="col-lg-7">
+                        
+                        @RenderBody()
+                    </div>
+                    <div class="col-lg-4 col-md-5">
+                        <div class="widget text-center">
+                            <img class="author-thumb-sm rounded-circle d-block mx-auto" alt="">
+                            <h2 class="widget-title text-white d-inline-block mt-4">Hakkımda</h2>
+                            <p class="mt-4"> </p>
+                            <ul class="list-inline mt-3">
+                                <li class="list-inline-item">
+                                    <a href="~/UITheme/#!" class="text-white text-primary-onHover p-2">
+                                        <span class="fab fa-twitter"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="~/UITheme/#!" class="text-white text-primary-onHover p-2">
+                                        <span class="fab fa-facebook-f"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="~/UITheme/#!" class="text-white text-primary-onHover p-2">
+                                        <span class="fab fa-instagram"></span>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="~/UITheme/#!" class="text-white text-primary-onHover p-2">
+                                        <span class="fab fa-linkedin-in"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end of author-widget -->
+
+                        <div class="widget bg-dark p-4 text-center">
+                            <h2 class="widget-title text-white d-inline-block mt-4">Bize Katılmak İster Misin?</h2>
+                            <p class="mt-4"></p>
+                            <form action="#">
+                                <div class="form-group">
+                                    <a class="btn btn-primary" href="~/Register/Create/">Şimdi Kayıt Ol<img src="~/UITheme/images/arrow-right.png" alt=""></a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end of subscription-widget -->
+                        
+                         <div class="widget">
+                            
+                            <div class="mb-5 text-center">
+                                <a class="widget-title text-white d-inline-block" href="~/Iletisims/Index/">Bize Ulaşın</a>
+                            </div>
+                    
+                            <div class="card post-item bg-transparent border-0 mb-5">
+                              
+                            </div> 
+                            <!-- end of widget-post-item -->
+                        </div>
+                        
+                        <!-- end of post-items widget -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- start of footer -->
+            <footer class="bg-dark">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Inspirations</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="~/UITheme/#!">Privacy State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                                <li><a href="~/UITheme/#!">State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Templates</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="~/UITheme/#!">Privacy State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                                <li><a href="~/UITheme/#!">State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Resource</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="~/UITheme/#!">Privacy State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                                <li><a href="~/UITheme/#!">State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mb-5">
+                            <h5 class="font-primary text-white mb-4">Company</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="~/UITheme/#!">Privacy State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                                <li><a href="~/UITheme/#!">State</a></li>
+                                <li><a href="~/UITheme/#!">Privacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end of footer -->
+        </div>
+
+    </section>
+    <!-- END main-wrapper -->
+    <!-- All JS Files -->
+    <script src="~/UITheme/plugins/jQuery/jquery.min.js"></script>
+    <script src="~/UITheme/plugins/bootstrap/bootstrap.min.js"></script>
+
+    <!-- Main Script -->
+    <script src="~/UITheme/js/script.js"></script>
+</body>
+</html>
+

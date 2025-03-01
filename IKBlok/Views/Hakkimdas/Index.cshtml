@@ -1,0 +1,13 @@
+﻿@model EFLayer.Class.Hakkimda
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UILayout.cshtml";
+}
+<div class="row">
+    <div class="col-md-9">
+        <img class="img-fluid" style="width:200px; height:200px" src="@Model.resimLinki" alt="">
+        <h1 class="text-white add-letter-space my-4">@Model.baslik</h1>
+        <p>@Model.icerik</p>
+    </div>
+</div>
